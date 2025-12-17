@@ -3,7 +3,7 @@
 Interactive quantum computing simulator with Bloch sphere visualization.
 
 ## 📱 Live Demo
-[![Demo](https://github.com/JOEINTERCOM/Quantum-Core/blob/main/QUANTUM%20CORE/Screenshot%202025-12-15%20205602.png?raw=true)](https://projectquantum-core.netlify.app/)
+[![Demo](https://github.com/JOEINTERCOM/Quantum-Core/blob/main/Screenshot%202025-12-15%20205602.png?raw=true)](https://projectquantum-core.netlify.app/)
 
 ## ✨ Features
 - Qubit superposition & entanglement demos
