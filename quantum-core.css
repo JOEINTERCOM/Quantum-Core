@@ -201,7 +201,95 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 12px 40px rgba(168,85,247,0.6);
 }
+/* MOBILE NAV FIX - HAMBURGER + SHOW BUTTONS */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100vw;
+    overflow: visible !important;
+}
 
+.nav-buttons,
+.navbar-nav,
+.menu {
+    position: fixed !important;
+    top: 70px !important; /* Below navbar */
+    left: 0;
+    right: 0;
+    background: rgba(15,15,40,0.95);
+    backdrop-filter: blur(20px);
+    flex-direction: column !important;
+    padding: 1rem;
+    gap: 1rem;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.nav-buttons.show,
+.navbar-nav.show,
+.menu.active {
+    transform: translateY(0) !important;
+    display: flex !important;
+}
+
+/* HAMBURGER BUTTON */
+.hamburger,
+.menu-toggle {
+    display: block !important;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    padding: 0.5rem;
+}
+
+/* HIDE DESKTOP BUTTONS ON MOBILE */
+@media (min-width: 769px) {
+    .hamburger,
+    .menu-toggle {
+        display: none !important;
+    }
+    
+    .nav-buttons,
+    .navbar-nav,
+    .menu {
+        position: static !important;
+        transform: none !important;
+        flex-direction: row !important;
+        max-height: none;
+    }
+}
+
+/* MOBILE ONLY - FORCE SHOW */
+@media (max-width: 768px) {
+    .nav-buttons,
+    .navbar-nav,
+    .menu {
+        display: flex !important;
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    .nav-buttons.show,
+    .navbar-nav.show,
+    .menu.active {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    .nav-link,
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+    }
+}
 /* === HERO SECTION === */
 .hero {
     min-height: 100vh;
@@ -771,3 +859,4 @@ body > *:nth-child(6) { animation-delay: 1.4s; }
     }
 
 }
+
