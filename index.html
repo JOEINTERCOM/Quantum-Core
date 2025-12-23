@@ -16,24 +16,26 @@
     <div class="crystal-core"></div>
 
     <!-- Navigation -->
-  <nav class="quantum-nav">
-    <div class="nav-container">
-        <div class="logo-core">
-            <div class="qc-icon"></div>
-            <span>QUANTUM CORE</span>
-        </div>
-        <!-- ADD THIS HAMBURGER -->
-        <button class="hamburger">☰</button>
-        <div class="nav-links">
-            <a href="#features">Capabilities</a>
-            <a href="#platform">Platform</a>
-            <a href="#results">Results</a>
-            <a href="#enterprise">Enterprise</a>
-        </div>
-        <div class="nav-cta">
-            <button class="demo-btn">Request Demo</button>
-        </div>
+ <nav class="quantum-nav">
+  <div class="nav-container">
+    <div class="logo-core">
+      <div class="qc-icon"></div>
+      <span>QUANTUM CORE</span>
     </div>
+
+    <button class="hamburger">☰</button>
+
+    <div class="nav-links">
+      <a href="#features">Capabilities</a>
+      <a href="#platform">Platform</a>
+      <a href="#results">Results</a>
+      <a href="#enterprise">Enterprise</a>
+    </div>
+
+    <div class="nav-cta">
+      <button class="demo-btn">Request Demo</button>
+    </div>
+  </div>
 </nav>
     <!-- Hero Section -->
     <section class="hero">
@@ -185,12 +187,27 @@
         </div>
     </footer>
 <script>
-document.querySelector('.hamburger').addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.toggle('active');
-});
+  document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', function () {
+        navLinks.classList.toggle('active');
+      });
+
+      // Optional: close menu when a link is clicked
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+        });
+      });
+    }
+  });
 </script>
 </body>
 
 </html>
+
 
 
