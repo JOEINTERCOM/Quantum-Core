@@ -446,33 +446,39 @@ body {
     0%, 100% { transform: scale(1); opacity: 1; }
     50% { transform: scale(1.1); opacity: 0.7; }
 }
-
-/* === PLATFORM PREVIEW === */
+/* MOBILE RESPONSIVE PLATFORM PREVIEW - REPLACE EXISTING */
 .platform-preview {
-    padding: 120px 0;
+    padding: 80px 0; /* Reduced padding */
     background: rgba(15,15,40,0.8);
     position: relative;
+    overflow-x: hidden; /* CRITICAL: No horizontal scroll */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%); /* Full viewport width */
 }
 
 .preview-header {
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem; /* Reduced */
+    padding: 0 15px;
 }
 
 .preview-header h2 {
-    font-size: 3rem;
+    font-size: 2.2rem; /* Smaller mobile font */
     font-weight: 800;
     margin-bottom: 1rem;
+    line-height: 1.2;
     background: linear-gradient(135deg, #e0e7ff, #a855f7);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .decision-matrix {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    display: flex;
+    flex-direction: column; /* STACK VERTICALLY MOBILE */
+    gap: 2rem;
     align-items: center;
+    padding: 0 15px;
+    max-width: 100%;
 }
 
 .matrix-cell {
@@ -480,67 +486,80 @@ body {
     backdrop-filter: blur(30px);
     border: 1px solid rgba(168,85,247,0.3);
     border-radius: 24px;
-    padding: 3rem;
-    height: 300px;
+    padding: 2rem 1.5rem; /* Reduced padding */
+    width: 100%;
+    max-width: 400px; /* Fixed max width */
+    height: auto; /* Auto height */
+    min-height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-     background: linear-gradient(135deg, rgba(168,85,247,0.15), rgba(59,130,246,0.15));
-    box-shadow: 0 0 60px rgba(168,85,247,0.4);
-}
-
-.matrix-cell.active {
     background: linear-gradient(135deg, rgba(168,85,247,0.15), rgba(59,130,246,0.15));
-    box-shadow: 0 0 60px rgba(168,85,247,0.4);
+    box-shadow: 0 0 40px rgba(168,85,247,0.3); /* Smaller shadow */
 }
 
 .decision-flow {
     display: flex;
-    gap: 1.5rem;
+    flex-direction: column; /* STACK VERTICALLY MOBILE */
+    gap: 1rem;
+    width: 100%;
 }
 
 .flow-step {
-    padding: 1rem 2rem;
+    padding: 0.8rem 1.5rem;
     background: rgba(255,255,255,0.1);
     border-radius: 50px;
     font-weight: 600;
     border: 1px solid rgba(255,255,255,0.2);
     animation: flowProgress 3s ease-in-out infinite;
-}
-
-.flow-step.analyzing { background: rgba(59,130,246,0.3); border-color: #3b82f6; }
-.flow-step.modeling { background: rgba(34,197,94,0.3); border-color: #10b981; animation-delay: 1s; }
-.flow-step.deciding { background: linear-gradient(135deg, #a855f7, #3b82f6); border-color: #a855f7; animation-delay: 2s; }
-
-@keyframes flowProgress {
-    0% { opacity: 0.6; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.05); }
-    100% { opacity: 0.6; transform: scale(1); }
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .metric-stack {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
+    width: 100%;
 }
 
 .metric {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
-    padding: 1rem 1.5rem;
+    padding: 0.8rem 1rem;
     background: rgba(255,255,255,0.08);
     border-radius: 12px;
     border-left: 4px solid #a855f7;
     animation: metricPulse 2s ease-in-out infinite;
 }
 
-.metric.confidence { border-left-color: #10b981; animation-delay: 0.5s; }
-.metric.risk { border-left-color: #ef4444; animation-delay: 1s; }
-.metric.speed { border-left-color: #3b82f6; }
-
-@keyframes metricPulse {
-    0%, 100% { box-shadow: 0 0 20px rgba(168,85,247,0.2); }
-    50% { box-shadow: 0 0 40px rgba(168,85,247,0.5); }
+/* DESKTOP ONLY - Override mobile styles */
+@media (min-width: 768px) {
+    .decision-matrix {
+        grid-template-columns: 1fr 1fr;
+        flex-direction: row;
+        gap: 3rem;
+    }
+    
+    .decision-flow {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+    
+    .preview-header h2 {
+        font-size: 3rem;
+    }
+    
+    .matrix-cell {
+        height: 300px;
+        max-width: none;
+        padding: 3rem;
+    }
+    
+    .platform-preview {
+        padding: 120px 0;
+    }
 }
 
 /* === RESULTS SECTION === */
@@ -750,4 +769,5 @@ body > *:nth-child(6) { animation-delay: 1.4s; }
         opacity: 1;
         transform: translateY(0);
     }
+
 }
