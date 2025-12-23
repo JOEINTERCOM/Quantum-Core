@@ -16,26 +16,25 @@
     <div class="crystal-core"></div>
 
     <!-- Navigation -->
-    <nav class="quantum-nav">
-        <div class="nav-container">
-            <div class="logo-core">
-                <!-- Add to nav after logo -->
-<button class="hamburger">☰</button>
-                <div class="qc-icon"></div>
-                <span>QUANTUM CORE</span>
-            </div>
-            <div class="nav-links">
-                <a href="#features">Capabilities</a>
-                <a href="#platform">Platform</a>
-                <a href="#results">Results</a>
-                <a href="#enterprise">Enterprise</a>
-            </div>
-            <div class="nav-cta">
-                <button class="demo-btn">Request Demo</button>
-            </div>
+  <nav class="quantum-nav">
+    <div class="nav-container">
+        <div class="logo-core">
+            <div class="qc-icon"></div>
+            <span>QUANTUM CORE</span>
         </div>
-    </nav>
-
+        <!-- ADD THIS HAMBURGER -->
+        <button class="hamburger">☰</button>
+        <div class="nav-links">
+            <a href="#features">Capabilities</a>
+            <a href="#platform">Platform</a>
+            <a href="#results">Results</a>
+            <a href="#enterprise">Enterprise</a>
+        </div>
+        <div class="nav-cta">
+            <button class="demo-btn">Request Demo</button>
+        </div>
+    </div>
+</nav>
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
@@ -185,12 +184,13 @@
             </div>
         </div>
     </footer>
-    <script>
+<script>
 document.querySelector('.hamburger').addEventListener('click', () => {
-    document.querySelector('.nav-buttons, .navbar-nav, .menu').classList.toggle('show');
+    document.querySelector('.nav-links').classList.toggle('active');
 });
 </script>
 </body>
 
 </html>
+
 
