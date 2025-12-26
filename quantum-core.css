@@ -636,7 +636,7 @@ body {
     }
     
     .decision-flow {
-        flex-direction: row;
+        flex-direction: column;
         gap: 1.5rem;
     }
     
@@ -864,6 +864,7 @@ body > *:nth-child(6) { animation-delay: 1.4s; }
     }
 
 }
+
 
 
 
