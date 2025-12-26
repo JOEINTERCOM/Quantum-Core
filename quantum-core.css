@@ -828,8 +828,6 @@ body {
     .nav-links { display: none; }
     .hero { padding: 100px 1rem 3rem; }
     .quantum-title { font-size: 3rem; }
-    .highlight{  position: relative;
-                right: 30px; }
     .decision-matrix{ flex-direction: column; }
     .decision-flow{ flex-direction: column; }
     .hero-stats { flex-direction: column; gap: 1.5rem; align-items: center; }
@@ -870,6 +868,7 @@ body > *:nth-child(6) { animation-delay: 1.4s; }
     }
 
 }
+
 
 
 
