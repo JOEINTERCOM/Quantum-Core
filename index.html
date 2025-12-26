@@ -188,26 +188,27 @@
     </footer>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.getElementById('qc-hamburger');
+    const navLinks  = document.getElementById('qc-nav-links');
 
-    if (hamburger && navLinks) {
-      hamburger.addEventListener('click', function () {
-        navLinks.classList.toggle('active');
-      });
+    if (!hamburger || !navLinks) return;
 
-      // Optional: close menu when a link is clicked
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('active');
-        });
+    hamburger.addEventListener('click', function () {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
       });
-    }
+    });
   });
 </script>
 </body>
 
 </html>
+
 
 
 
