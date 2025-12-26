@@ -631,7 +631,7 @@ body {
 @media (min-width: 768px) {
     .decision-matrix {
         grid-template-columns: 1fr 1fr;
-        flex-direction: column;
+        flex-direction: row;
         gap: 3rem;
     }
     
@@ -868,6 +868,7 @@ body > *:nth-child(6) { animation-delay: 1.4s; }
     }
 
 }
+
 
 
 
