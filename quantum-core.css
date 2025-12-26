@@ -630,7 +630,7 @@ body {
 /* DESKTOP ONLY - Override mobile styles */
 @media (min-width: 768px) {
     .decision-matrix {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr ;
         flex-direction: column;
         gap: 3rem;
     }
@@ -864,6 +864,7 @@ body > *:nth-child(6) { animation-delay: 1.4s; }
     }
 
 }
+
 
 
 
