@@ -23,19 +23,20 @@
       <span>QUANTUM CORE</span>
     </div>
 
-    <!-- Hamburger only for mobile -->
-    <button class="hamburger" id="qc-hamburger" aria-label="Toggle navigation">
+    <!-- Hamburger for mobile -->
+    <button class="hamburger" aria-label="Toggle navigation">
       ☰
     </button>
 
-    <!-- Navigation links -->
-    <div class="nav-links" id="qc-nav-links">
+    <!-- Links -->
+    <div class="nav-links">
       <a href="#features">Capabilities</a>
       <a href="#platform">Platform</a>
       <a href="#results">Results</a>
       <a href="#enterprise">Enterprise</a>
     </div>
 
+    <!-- CTA (hidden on mobile) -->
     <div class="nav-cta">
       <button class="demo-btn">Request Demo</button>
     </div>
@@ -192,8 +193,8 @@
     </footer>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.getElementById('qc-hamburger');
-    const navLinks  = document.getElementById('qc-nav-links');
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks  = document.querySelector('.nav-links');
 
     if (!hamburger || !navLinks) return;
 
@@ -201,7 +202,6 @@
       navLinks.classList.toggle('active');
     });
 
-    // Close menu when a link is clicked
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
@@ -212,6 +212,7 @@
 </body>
 
 </html>
+
 
 
 
