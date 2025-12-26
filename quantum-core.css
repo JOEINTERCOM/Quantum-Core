@@ -567,7 +567,7 @@ body {
 
 .decision-matrix {
     display: flex;
-    flex-direction: column; /* STACK VERTICALLY MOBILE */
+    flex-direction: row; /* STACK VERTICALLY MOBILE */
     gap: 2rem;
     align-items: center;
     padding: 0 15px;
@@ -593,7 +593,7 @@ body {
 
 .decision-flow {
     display: flex;
-    flex-direction: column; /* STACK VERTICALLY MOBILE */
+    flex-direction: row; /* STACK VERTICALLY MOBILE */
     gap: 1rem;
     width: 100%;
 }
@@ -868,6 +868,7 @@ body > *:nth-child(6) { animation-delay: 1.4s; }
     }
 
 }
+
 
 
 
